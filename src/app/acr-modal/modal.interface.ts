@@ -13,9 +13,8 @@ export interface AcrModalConfig {
 
 export class AcrModalObject {
   public config: AcrModalConfig;
-  public actif: boolean = true;
+  public actif: boolean;
   constructor(config: AcrModalConfig) {
     this.config = config;
-    this.actif = this.config.actif ? this.config.actif : true;
   }
 }

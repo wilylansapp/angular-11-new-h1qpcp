@@ -11,8 +11,18 @@ import { DomService } from './dom.service';
   exports: [AcrModalComponent, NewHostDirective],
 })
 export class AcrModalModule {
-  constructor(private domService: DomService) {
+  constructor(
+    private domService: DomService,
+    private modalService: AcrModalService
+  ) {
     console.log('MODULE MODAL ->');
-    this.domService.appendComponentToBody(AcrModalComponent);
+    this.modalService.$opnedModal.subscribe((opened) => {
+      console.log(opened);
+      if (opened) {
+        this.domService.appendComponentToBody(AcrModalComponent);
+      } else {
+        this.domService.detachComponent();
+      }
+    });
   }
 }
