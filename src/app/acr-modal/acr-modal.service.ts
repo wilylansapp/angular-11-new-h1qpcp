@@ -33,7 +33,6 @@ export class AcrModalService {
   }
 
   public closeModal(modal: AcrModalObject) {
-    console.log('close');
     this.modalObj.actif = false;
     this.$opnedModal.next(false);
     this.emitModalObj();
