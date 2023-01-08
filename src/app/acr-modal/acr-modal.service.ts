@@ -4,7 +4,7 @@ import { AcrModalConfig, AcrModalObject } from './modal.interface';
 
 @Injectable()
 export class AcrModalService {
-  private modalObj: AcrModalObject = null;
+  public modalObj: AcrModalObject = null;
   public $opnedModal: Subject<boolean> = new Subject();
   public $modalObj: BehaviorSubject<AcrModalObject> = new BehaviorSubject(null);
 
