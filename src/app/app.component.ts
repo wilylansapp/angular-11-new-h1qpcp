@@ -19,7 +19,8 @@ export class AppComponent implements OnInit {
     };
     const modal = this.acrModal.createModal(acrModalConfig);
   }
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  openModal() {
     const acrModalConfig2: AcrModalConfig = {
       name: 'hey',
       component: HelloComponent,
@@ -27,10 +28,7 @@ export class AppComponent implements OnInit {
       width: 80,
     };
     const modal2 = this.acrModal.createModal(acrModalConfig2);
-    this.acrModal.openModal(modal2);
 
-    setTimeout(() => {
-      this.acrModal.closeModal(modal2);
-    }, 3000);
+    this.acrModal.openModal(modal2);
   }
 }

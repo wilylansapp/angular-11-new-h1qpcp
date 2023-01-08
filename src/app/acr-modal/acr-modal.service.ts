@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { AcrModalComponent } from './acr-modal/acr-modal.component';
-import { DomService } from './dom.service';
 import { AcrModalConfig, AcrModalObject } from './modal.interface';
 
 @Injectable()
