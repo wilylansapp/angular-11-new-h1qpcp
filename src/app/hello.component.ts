@@ -18,8 +18,17 @@ import { AcrModalService } from './acr-modal/acr-modal.service';
 })
 export class HelloComponent {
   name: string = 'yooo';
-  constructor(private acrModal: AcrModalService) {}
+  constructor(private acrModal: AcrModalService) {
+    this.acrModal.modalObj.data.subscribe((data) => {
+      console.log('data in open modal', data);
+    });
+  }
   closeModal() {
-    this.acrModal.closeModal(this.acrModal.modalObj);
+    const objLans = {
+      name: 'walid',
+      number: 15,
+      color: 'banafsaji',
+    };
+    this.acrModal.closeModal(objLans);
   }
 }

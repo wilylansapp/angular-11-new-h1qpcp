@@ -21,14 +21,22 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(): void {}
   openModal() {
+    const data = {
+      name: 'walid',
+      number: 15,
+      celib: false,
+    };
     const acrModalConfig2: AcrModalConfig = {
       name: 'hey',
       component: HelloComponent,
       height: 70,
       width: 80,
+      data: data,
     };
     const modal2 = this.acrModal.createModal(acrModalConfig2);
 
-    this.acrModal.openModal(modal2);
+    this.acrModal.openModal(modal2).subscribe((data) => {
+      console.log('data afterclose', data);
+    });
   }
 }
